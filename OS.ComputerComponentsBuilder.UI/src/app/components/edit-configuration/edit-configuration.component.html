@@ -1,0 +1,97 @@
+<mat-toolbar color="primary">
+  <span class="fill-remaining-space text-center">Edit current configuration</span>
+</mat-toolbar>
+
+<div class="container justify-content-center">
+  <form [formGroup]="editConfigurationFormGroup" (ngSubmit)="editConfiguration()" class="edit-configuration-form">
+
+    <mat-form-field class="edit-configuration-form-field">
+
+      <mat-label>CPU</mat-label>
+      <mat-select formControlName="cpuControl" >
+        <mat-option>
+          <ngx-mat-select-search [formControl]="cpuFilter" placeholderLabel="Search cpu..."></ngx-mat-select-search>
+        </mat-option>
+        <mat-option *ngFor="let cpu of cpus$ | async" [value]="cpu.id">
+          {{cpu.name}} - {{cpu.price}}
+        </mat-option>
+      </mat-select>
+
+    </mat-form-field>
+
+    <mat-form-field class="edit-configuration-form-field">
+
+      <mat-label>GPU</mat-label>
+      <mat-select formControlName="gpuControl" >
+        <mat-option>
+          <ngx-mat-select-search [formControl]="gpuFilter" placeholderLabel="Search gpu..."></ngx-mat-select-search>
+        </mat-option>
+        <mat-option *ngFor="let gpu of gpus$ | async" [value]="gpu.id">
+          {{gpu.name}} - {{gpu.price}}
+        </mat-option>
+      </mat-select>
+
+    </mat-form-field>
+
+    <mat-form-field class="edit-configuration-form-field">
+
+      <mat-label>RAM</mat-label>
+      <mat-select formControlName="ramControl" >
+        <mat-option>
+          <ngx-mat-select-search [formControl]="ramFilter" placeholderLabel="Search ram..."></ngx-mat-select-search>
+        </mat-option>
+        <mat-option *ngFor="let ram of rams$ | async" [value]="ram.id">
+          {{ram.name}} - {{ram.price}}
+        </mat-option>
+      </mat-select>
+
+    </mat-form-field>
+
+    <mat-form-field class="edit-configuration-form-field">
+
+      <mat-label>Motherboard</mat-label>
+      <mat-select formControlName="motherboardControl" >
+        <mat-option>
+          <ngx-mat-select-search [formControl]="motherboardFilter" placeholderLabel="Search motherboard..."></ngx-mat-select-search>
+        </mat-option>
+        <mat-option *ngFor="let motherboard of motherboards$ | async" [value]="motherboard.id">
+          {{motherboard.name}} - {{motherboard.price}}
+        </mat-option>
+      </mat-select>
+
+    </mat-form-field>
+
+    <mat-form-field class="edit-configuration-form-field">
+
+      <mat-label>Storage</mat-label>
+      <mat-select formControlName="storageControl" >
+        <mat-option>
+          <ngx-mat-select-search [formControl]="storageFilter" placeholderLabel="Search storage..."></ngx-mat-select-search>
+        </mat-option>
+        <mat-option *ngFor="let storage of storages$ | async" [value]="storage.id">
+          {{storage.name}} - {{storage.price}}
+        </mat-option>
+      </mat-select>
+
+    </mat-form-field>
+
+    <mat-form-field class="edit-configuration-form-field">
+
+      <mat-label>If you want to add second storage</mat-label>
+      <mat-select formControlName="additionalStorageControl" >
+        <mat-option>
+          <ngx-mat-select-search [formControl]="additionalStorageFilter" placeholderLabel="If you want to add second storage - search it"></ngx-mat-select-search>
+        </mat-option>
+        <mat-option *ngFor="let storage of additionalStorages$ | async" [value]="storage.id">
+          {{storage.name}} - {{storage.price}}
+        </mat-option>
+      </mat-select>
+
+    </mat-form-field>
+
+    <div class="text-center">
+      <button type="submit" class="btn btn-primary">Save changes</button>
+    </div>
+
+  </form>
+</div>

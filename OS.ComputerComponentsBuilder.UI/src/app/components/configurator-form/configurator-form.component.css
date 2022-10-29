@@ -1,0 +1,12 @@
+.configurator__header {
+  margin-top: 10%;
+}
+
+.configurator__header_content {
+  font-size: 36px;
+}
+
+.configurator-form {
+  display: inline-block;
+  margin-top: 5%;
+}

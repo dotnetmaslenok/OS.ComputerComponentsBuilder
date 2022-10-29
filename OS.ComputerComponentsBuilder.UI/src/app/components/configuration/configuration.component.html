@@ -1,0 +1,39 @@
+<div class="container-fluid configurations">
+  <div class="configurations_list">
+    <h2 class="text-center configuration_computerType">Computer type: {{computerConfiguration.type}}</h2>
+    <h3 class="text-center configuration_totalPrice">Total price: {{totalPrice}}</h3>
+    <table class="components-table">
+      <thead>
+        <tr>
+          <th scope="col"></th>
+          <th scope="col">Component type</th>
+          <th scope="col">Name</th>
+          <th scope="col">Producer</th>
+          <th scope="col">Price</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let component of computerConfigurationMap | keyvalue">
+          <th scope="row">{{component.key}}</th>
+          <td>{{component.value.componentType}}</td>
+          <td>{{component.value.name}}</td>
+          <td>{{component.value.producer}}</td>
+          <td>{{component.value.price}}</td>
+          <td><a (click)="showComputerComponentDetails(component.value)" class="btn btn-info">Open {{component.value.componentType}} details</a></td>
+        </tr>
+        <tr *ngFor="let storage of storageMap | keyvalue">
+          <th scope="row">{{storage.key}}</th>
+          <td>{{storage.value.type}} {{storage.value.componentType}}</td>
+          <td>{{storage.value.name}}</td>
+          <td>{{storage.value.producer}}</td>
+          <td>{{storage.value.price}}</td>
+          <td><a (click)="showComputerComponentDetails(storage.value)" class="btn btn-info">Open {{storage.value.componentType}} details</a></td>
+        </tr>
+      </tbody>
+    </table>
+
+    <div class="container edit-configuration">
+      <a routerLink="/edit-configuration" class="btn btn-warning">Edit current configuration</a>
+    </div>
+  </div>
+</div>

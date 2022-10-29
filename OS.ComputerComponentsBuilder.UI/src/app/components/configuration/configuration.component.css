@@ -1,0 +1,44 @@
+.container-fluid {
+  padding-top: 30px;
+}
+
+.configuration_computerType {
+  margin: 2.5% 0px;
+}
+
+.configuration_totalPrice {
+  margin: 2.5% 0px;
+}
+
+table {
+  margin-left: 20%;
+}
+
+tr {
+  font-family: "JetBrains Mono";
+  font-size: 16px;
+}
+
+td {
+  line-height: 30px;
+}
+
+ul {
+  counter-reset: index;
+  padding: 0;
+  max-width: 300px;
+}
+
+a {
+  display:block;
+  text-align: center;
+  width:210px;
+  line-height: 20px;
+  margin-left: 10px;
+}
+
+.edit-configuration {
+  margin-top: 30px;
+  display: flex;
+  justify-content: center;
+}

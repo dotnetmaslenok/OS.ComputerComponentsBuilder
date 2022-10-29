@@ -1,0 +1,20 @@
+<div class="configurator__header">
+  <h3 class="configurator__header_content">Enter configuration parameters</h3>
+</div>
+<div class="configurator__form">
+  <form class="configurator-form" [formGroup]="configuratorFormGroup" (ngSubmit)="onConfiguratorFormSubmit()">
+    <div class="form-group">
+      <label>Price</label>
+      <input formControlName="price" class="form-control price-control" placeholder="Enter your price limit">
+    </div>
+    <div class="form-group">
+      <label>Computer type</label>
+      <select formControlName="type" class="form-control" placeholder="Select computer type">
+        <option *ngFor="let type of computerTypeKeys">{{type}}</option>
+      </select>
+    </div>
+    <div class="form-group">
+      <button type="submit" class="btn btn-primary">Configure</button>
+    </div>
+  </form>
+</div>

@@ -1,0 +1,12 @@
+{
+  "profiles": {
+    "OS.ComputerComponentsBuilder": {
+      "commandName": "Project",
+      "dotnetRunMessages": true,
+      "applicationUrl": "https://localhost:7065",
+      "environmentVariables": {
+        "ASPNETCORE_ENVIRONMENT": "Development"
+      }
+    }
+  }
+}
